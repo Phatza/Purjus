@@ -1,0 +1,43 @@
+/* Style Balise HTML */
+
+section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style thumbnails */
+
+.thumbnails {
+  display: inline-block;
+}
+.thumbnails li {
+  width: 60px;
+  height: 60px;
+}
+
+.thumbnails img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Style mainImg */
+
+.mainImg {
+  display: inline-block;
+  width: 500px;
+  height: 500px;
+  border: 1px solid #CCC;
+}
+.mainImg img {
+  width: 100%;
+  height: 100%;
+}
+

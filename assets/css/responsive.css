@@ -1,0 +1,21 @@
+/* Responsive small devices */
+
+@media (max-width: 379px) {
+
+	/* Style Balise HTML */
+	section {
+		text-align: left;
+	}
+
+	/* Style Thumbnails */
+	.thumbnails li {
+		display: inline-block;
+	}
+
+	/* Style MainImg */
+	.mainImg {
+  		display: inline-block;
+  		width: 100%;
+  		height: 300px;
+	}
+}
