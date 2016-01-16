@@ -25,6 +25,7 @@ ul {
 .thumbnails li {
   width: 60px;
   height: 60px;
+  cursor: pointer;
 }
 
 .thumbnails img {
