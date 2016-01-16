@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Purjus-test</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+</head>
+<body>
+
+<section>
+
+	<div class="thumbnails">
+					
+		<ul>
+			<li>
+				<img src="assets/images/streets.jpg" alt="paysage campagne" onClick="displayImgOnClick(this)" />
+			</li>
+			<li>
+				<img src="assets/images/landscape.jpeg" alt="paysage nuageux" onClick="displayImgOnClick(this)"/>
+			</li>
+			<li>
+				<img src="assets/images/snow.jpeg" alt="paysage neige" onClick="displayImgOnClick(this)"/>
+			</li>
+		</ul>
+
+	</div> <!-- end.thumbnails -->
+
+	<div class="mainImg">
+		<img src="assets/images/streets.jpg" alt="paysage campagne"/>
+		<button class="zoomIn">+</button>
+		<button class="zoomOut">-</button>
+	</div> <!-- end.mainImg -->
+
+</section>
+	
+</body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="assets/js/jquery.panzoom.min.js" type="text/javascript"></script>
+
+
+
+<script>
+
+	// Script pour afficher les images cliqués	
+	function displayImgOnClick(img) {
+
+		$('.mainImg img').attr('src', $(img).attr('src'));
+
+	};
+
+	// Utilisation du plugin Panzoom
+
+	$(".mainImg img").panzoom({
+	  $zoomIn: $(".zoomIn"),
+	  $zoomOut: $(".zoomOut"),
+	  minScale: 1,
+	  maxScale: 5,
+	  contain: 'invert' // Cache l'img zoomé derrière le parent
+
+	});
+
+</script>
+
+</html>
