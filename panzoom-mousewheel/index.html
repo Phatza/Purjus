@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Purjus-test</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+</head>
+<body>
+
+
+<h1 style="text-align:center;">Use your mousewheel or pinch it</h1>
+
+<section>
+
+	<div class="thumbnails">
+					
+		<ul>
+			<li>
+				<img src="assets/images/streets.jpg" alt="paysage campagne" onClick="displayImgOnClick(this)" />
+			</li>
+			<li>
+				<img src="assets/images/landscape.jpeg" alt="paysage nuageux" onClick="displayImgOnClick(this)"/>
+			</li>
+			<li>
+				<img src="assets/images/snow.jpeg" alt="paysage neige" onClick="displayImgOnClick(this)"/>
+			</li>
+		</ul>
+
+	</div> <!-- end.thumbnails -->
+
+	<div class="mainImg">
+		<img src="assets/images/streets.jpg" alt="paysage campagne"/>
+	</div> <!-- end.mainImg -->
+
+</section>
+	
+</body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="assets/js/jquery.panzoom.min.js" type="text/javascript"></script>
+<script src="assets/js/jquery.mousewheel.js" type="text/javascript"></script>
+
+
+
+<script>
+
+	// Script pour afficher les images cliqués	
+	function displayImgOnClick(img) {
+
+		$('.mainImg img').attr('src', $(img).attr('src'));
+
+	};
+
+	// Utilisation du plugin Panzoom pour mousewheel or pinch zoom
+        (function() {
+          var $panzoom = $('.mainImg img').panzoom({
+          	contain: 'invert',
+          	minScale: 1,
+	  		maxScale: 5
+          });
+          $panzoom.parent().on('mousewheel.focal', function( e ) {
+            e.preventDefault();
+            var delta = e.delta || e.originalEvent.wheelDelta;
+            var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+            $panzoom.panzoom('zoom', zoomOut, {
+              increment: 0.1,
+              animate: false,
+              focal: e
+            });
+          });
+        })();
+
+</script>
+
+</html>
